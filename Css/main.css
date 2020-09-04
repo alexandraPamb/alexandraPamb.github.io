@@ -136,18 +136,14 @@ section#contact a,  section#contact a:hover{
 
 }
 
-.empty-vertical-space-alternative
+@media only screen and (max-width: 500px) 
 {
-    height: 16vh;
     
-}
+    .title h1{     
+        
+         font-size: xx-large;  
+        
+    }
 
-/* @media only screen and (min-width: 769px) 
-{
-    .empty-vertical-space-alternative
-{
-    height: 16vh;
-    
 } 
-} */
 
