@@ -134,20 +134,21 @@ section#contact a,  section#contact a:hover{
         text-align: right;
     }
 
-}
+    .title{
+        height: 100vh;
+    }
 
-.empty-vertical-space-alternative
-{
-    height: 16vh;
-    
-}
-
-/* @media only screen and (min-width: 769px) 
-{
-    .empty-vertical-space-alternative
-{
-    height: 16vh;
-    
 } 
-} */
+
+@media only screen and (max-width: 501px) 
+{
+    
+    .title h1{     
+        
+         font-size: xx-large;  
+        
+    }
+
+} 
+
 
