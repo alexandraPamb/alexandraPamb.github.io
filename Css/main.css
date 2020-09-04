@@ -39,14 +39,11 @@ font-weight: bold;
     text-decoration: none;
 }
 #intro-section a:hover{
-    text-decoration: none;
-    
+    text-decoration: none;    
     font-weight: normal;
 }
 
-.display-none{
-    display: none;
-}
+ 
 #intro-section img{
     height: 700px;
 }
@@ -101,9 +98,11 @@ footer{
     padding-right: 1em;
     padding-bottom: 0.5em; 
     font-size:  x-small;  
+    letter-spacing: 0.5px;
 }
-footer a {
+footer a, footer a:hover {
     color: #f5f9e9;
+    text-decoration: underline;
 }
 
 footer,  section#contact, section#me {
