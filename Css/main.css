@@ -3,7 +3,7 @@
   section:not(:nth-child(2)){
       text-align: center;
       color: #515751;
-    font-family: 'Oswald Light';
+    font-family: 'Oswald Light','Roboto Condensed';
     letter-spacing: 0.2px;
   }
 
