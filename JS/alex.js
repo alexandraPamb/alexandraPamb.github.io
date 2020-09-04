@@ -16,10 +16,18 @@
 // var classTitle = document.getElementsByClassName('title');
 // var classTitleImage = document.getElementsByClassName('title-image');
 
-$(window).resize(function() {
-    if ($(window).width() > 768) {
-      $('.title').remove().insertAfter($('.title-image'));
-    } else {
-      $('.title').remove().insertBefore($('.title-image'));
-    }
-  })
+window.addEventListener("resize", SwapElements);
+window.addEventListener("load", SwapElements);
+
+function SwapElements (e){
+  if ($(window).width() > 990) {
+    $('.title').remove().insertAfter($('.title-image'));
+  } else {
+    $('.title').remove().insertBefore($('.title-image'));
+  }
+} 
+
+
+ 
+
+ 

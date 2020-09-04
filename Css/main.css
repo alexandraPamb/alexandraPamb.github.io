@@ -4,7 +4,7 @@
       text-align: center;
       color: #515751;
     font-family: 'Oswald Light';
-    letter-spacing: 2.5px;
+    letter-spacing: 0.2px;
   }
 
   body{      
@@ -29,7 +29,6 @@
 .list-item, .list-subitem{
     font-family: 'Roboto Condensed';
     font-size: xx-large;    
-    text-transform: lowercase;
     text-align: center;
 }
 /*.list-item:hover{
@@ -64,25 +63,25 @@ section a, section a:hover{
 }
 
 .shows_pictures img{
-    height:400px;   
+    /* height:400px;    */
     margin-bottom: 1vh !important;
 }
  
 section .row div h1{
-    margin-bottom:4vh ;
+    margin-bottom:6vh ;
     font-family:'Bungee Inline';
     font-size: 4rem;
     color: #36453b;
 }
 
 section .row div h3{
-    margin-bottom:8vh;
+    margin-bottom:4vh;
     font-family:'Bungee Shade';
     font-size: 2rem;
 }
 
 section .row div h4{
-    margin-bottom:4vh;
+    margin-bottom:2vh;
     font-family:'Fugaz One';
     font-size: 1.5rem;
 }
@@ -92,10 +91,10 @@ section .row div img{
     margin-top:4vh
 }
 
-.empty-vertical-space1{    height: 64vh;}
-.empty-vertical-space2{    height: 32vh;}
-.empty-vertical-space3{    height: 16vh;}
-.empty-vertical-space4{    height: 8vh;}
+.empty-vertical-space1{    height: 28vh;}
+.empty-vertical-space2{    height: 21vh;}
+.empty-vertical-space3{    height: 14vh;}
+.empty-vertical-space4{    height: 7vh;}
 
 footer{
     text-align: right; 
@@ -119,36 +118,36 @@ section#contact a,  section#contact a:hover{
 }
 
 
-@media only screen and (max-width: 768px) 
+@media only screen and (max-width: 990px) 
 {
-    .empty-vertical-space-alternative
-    {
-        height: 1vh;
-    } 
+    
     .title h1{     
         letter-spacing: 5px; 
-        font-size: xx-large;   
+        /* font-size: xx-large;    */
         text-align: center; 
-    }
-
-    .list-item, .list-subitem{ 
-        font-size: x-large;      
+        
     }
 
     #intro-section img{
         height: 500px;
-        margin-top: 50px;
+        margin-top: 21vh;
         text-align: right;
     }
 
 }
 
-@media only screen and (min-width: 769px) 
+.empty-vertical-space-alternative
+{
+    height: 16vh;
+    
+}
+
+/* @media only screen and (min-width: 769px) 
 {
     .empty-vertical-space-alternative
 {
     height: 16vh;
     
 } 
-}
+} */
 
