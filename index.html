@@ -1,514 +1,116 @@
 <!DOCTYPE html>
 <html lang="el">
-
 <head>
-    <meta charset="utf-8">
-    <title>Alexandra Pambouka</title>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- Bootstrap 4.1.1 CSS -->
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Google Fonts: Jost & Montserrat -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
-
-    <!-- FontAwesome -->
-    <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
-
-    <style>
-        * {
-            box-sizing: border-box;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-        }
-
-        body {
-            font-family: 'Jost', sans-serif !important;
-            font-weight: 300;
-            color: #111111;
-            background-color: #ffffff;
-            line-height: 1.6;
-        }
-
-        h1, h2, h3, h4, h5, h6, .brand-name {
-            font-family: 'Montserrat', sans-serif !important;
-            font-weight: 400 !important;
-            text-transform: lowercase;
-            letter-spacing: 0.05em;
-        }
-
-        /* Header Navigation */
-        header.site-header {
-            position: sticky;
-            top: 0;
-            background: #ffffff;
-            border-bottom: 1px solid #f2f2f2;
-            padding: 22px 40px;
-            z-index: 1050;
-        }
-
-        .brand-name {
-            font-size: 1.2rem;
-            color: #000000 !important;
-            text-decoration: none !important;
-            letter-spacing: 0.08em;
-        }
-
-        .desktop-nav {
-            display: flex;
-            gap: 35px;
-        }
-
-        .desktop-nav a {
-            color: #111111 !important;
-            text-decoration: none !important;
-            font-size: 0.95rem;
-            letter-spacing: 0.05em;
-            transition: opacity 0.2s ease;
-        }
-
-        .desktop-nav a:hover {
-            opacity: 0.5;
-        }
-
-        .mobile-nav-wrapper {
-            position: relative;
-        }
-
-        .menu-toggle {
-            background: none;
-            border: none;
-            font-size: 1.3rem;
-            color: #000;
-            cursor: pointer;
-            padding: 5px;
-        }
-
-        .mobile-dropdown {
-            display: none;
-            position: absolute;
-            right: 0;
-            top: 100%;
-            background: #ffffff;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            border-radius: 4px;
-            padding: 10px 0;
-            min-width: 150px;
-            z-index: 1100;
-        }
-
-        .mobile-dropdown a {
-            display: block;
-            padding: 10px 20px;
-            color: #111;
-            text-decoration: none;
-            font-size: 0.95rem;
-        }
-
-        .mobile-nav-wrapper:hover .mobile-dropdown {
-            display: block;
-        }
-
-        /* Main Container */
-        main {
-            max-width: 1300px;
-            margin: 0 auto;
-            padding: 40px 20px;
-        }
-
-        /* Project Cards */
-        .project-card {
-            position: relative;
-            overflow: hidden;
-            cursor: pointer;
-            background: #fafafa;
-            margin-bottom: 30px;
-        }
-
-        .project-card img {
-            width: 100%;
-            height: auto;
-            display: block;
-            transition: transform 0.4s ease;
-        }
-
-        .project-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(255, 255, 255, 0.92);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-            padding: 20px;
-            text-align: center;
-        }
-
-        .project-card:hover .project-overlay {
-            opacity: 1;
-        }
-
-        .project-card:hover img {
-            transform: scale(1.03);
-        }
-
-        .project-title {
-            font-size: 1.15rem;
-            color: #000;
-            margin: 0;
-        }
-
-        /* Sections */
-        .about-section {
-            padding: 80px 0 40px 0;
-        }
-
-        .about-lead {
-            font-family: 'Montserrat', sans-serif !important;
-            font-size: 1.1rem;
-            margin-bottom: 25px;
-        }
-
-        .about-text {
-            font-size: 0.98rem;
-            line-height: 1.8;
-            color: #333333;
-            max-width: 750px;
-            margin: 0 auto;
-        }
-
-        .contact-section {
-            padding: 60px 0 40px 0;
-        }
-
-        .footer-links {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 25px;
-        }
-
-        .footer-links a {
-            color: #111111;
-            text-decoration: none;
-            font-size: 0.95rem;
-            transition: opacity 0.2s ease;
-        }
-
-        .footer-links a:hover {
-            opacity: 0.5;
-            text-decoration: underline;
-        }
-
-        /* Modals */
-        .modal-content {
-            border-radius: 0;
-            border: none;
-            padding: 25px;
-        }
-
-        .modal-header .close {
-            font-size: 1.8rem;
-            font-weight: 300;
-            outline: none;
-        }
-
-        .modal-project-desc {
-            max-width: 700px;
-            margin: 0 auto 35px auto;
-            font-size: 0.95rem;
-            color: #444;
-        }
-
-        .modal-body img {
-            margin-bottom: 25px;
-        }
-
-        .caption-text {
-            font-size: 0.85rem;
-            color: #666;
-            margin-top: -15px;
-            margin-bottom: 25px;
-        }
-
-        @media (max-width: 767.98px) {
-            header.site-header {
-                padding: 20px;
-            }
-        }
-    </style>
+    <title>Alexandra Pambouka</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="Css/style.css">
 </head>
-
 <body>
 
-    <header class="site-header d-flex justify-content-between align-items-center">
-        <a href="#" class="brand-name">alexandra pambouka</a>
-        
-        <nav class="desktop-nav d-none d-md-flex">
-            <a href="#projects">projects</a>
-            <a href="#about">about</a>
-            <a href="#contact">contact</a>
+    <!-- Header / Navigation -->
+    <header class="py-4 px-5 d-flex justify-content-between align-items-center">
+        <h1 class="h4 m-0"><a href="#" class="text-decoration-none text-dark">alexandra pambouka</a></h1>
+        <nav>
+            <a href="#projects" class="text-dark me-4 text-decoration-none">projects</a>
+            <a href="#about" class="text-dark me-4 text-decoration-none">about</a>
+            <a href="#contact" class="text-dark text-decoration-none">contact</a>
         </nav>
-
-        <div class="mobile-nav-wrapper d-block d-md-none">
-            <button class="menu-toggle" aria-label="Toggle Menu">
-                <i class="fas fa-bars"></i>
-            </button>
-            <div class="mobile-dropdown">
-                <a href="#projects">projects</a>
-                <a href="#about">about</a>
-                <a href="#contact">contact</a>
-            </div>
-        </div>
     </header>
 
-    <main>
-
-        <!-- Projects Grid Section -->
-        <section id="projects" class="py-4">
-            <div class="row">
-
-                <!-- Item 1: Ό,τι θυμόμαστε μένει -->
-                <div class="col-12 col-md-6 col-lg-4">
-                    <div class="project-card" data-toggle="modal" data-target="#modal-tenderscapes">
-                        <img src="Images/oti-thimomaste-menei/cover.jpg" alt="Ότι θυμόμαστε μένει" class="img-fluid">
-                        <div class="project-overlay">
-                            <h3 class="project-title">ό,τι θυμόμαστε μένει</h3>
+    <!-- Main Content / Projects Grid -->
+    <main class="container my-5" id="projects">
+        <div class="row">
+            <!-- Project Card / Link to Modal -->
+            <div class="col-md-4 mb-4">
+                <a href="#modal-oti-thimomaste-menei" data-bs-toggle="modal" class="text-decoration-none text-dark">
+                    <div class="card border-0">
+                        <img src="Images/oti-thimomaste-menei/cover.jpg" class="card-img-top" alt="Ό,τι θυμόμαστε μένει">
+                        <div class="card-body px-0 py-2">
+                            <h5 class="card-title h6">Ό,τι θυμόμαστε μένει</h5>
                         </div>
                     </div>
-                </div>
-
-                <!-- Item 2: Nature Folk Kitsch -->
-                <div class="col-12 col-md-6 col-lg-4">
-                    <div class="project-card" data-toggle="modal" data-target="#modal-nfk">
-                        <img src="Images/nfk1.jpg" alt="Nature Folk Kitsch" class="img-fluid">
-                        <div class="project-overlay">
-                            <h3 class="project-title">nature folk kitsch</h3>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Item 3: Continuous Thread -->
-                <div class="col-12 col-md-6 col-lg-4">
-                    <div class="project-card" data-toggle="modal" data-target="#modal-continuous-thread">
-                        <img src="Images/KO.jpg" alt="Continuous Thread" class="img-fluid">
-                        <div class="project-overlay">
-                            <h3 class="project-title">continuous thread</h3>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Item 4: Basketry -->
-                <div class="col-12 col-md-6 col-lg-4">
-                    <div class="project-card" data-toggle="modal" data-target="#modal-basketry">
-                        <img src="Images/basket/R1.jpg" alt="Basketry" class="img-fluid">
-                        <div class="project-overlay">
-                            <h3 class="project-title">basketry</h3>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Item 5: Workshops -->
-                <div class="col-12 col-md-6 col-lg-4">
-                    <div class="project-card" data-toggle="modal" data-target="#modal-workshops">
-                        <img src="Images/cabane.png" alt="Workshops" class="img-fluid">
-                        <div class="project-overlay">
-                            <h3 class="project-title">workshops</h3>
-                        </div>
-                    </div>
-                </div>
-
+                </a>
             </div>
-        </section>
+        </div>
 
-        <!-- About Section -->
-        <section id="about" class="about-section text-center border-top">
-            <h2 class="mb-4">about</h2>
-            <p class="about-lead">I am a visual artist</p>
-            <p class="about-text">
-                The main concepts around my work are sustainability, rituality, tradition, and playfulness. 
-                I create abstract forms combining colour, shapes, and rhythm. With “the seriousness of a child at play,” 
-                I choose leftover pieces of fabric and other materials, reclaiming what others deem waste, and 
-                transform them into a language of renewal, softness, and resilience - creating new forms in which 
-                vulnerability itself becomes a form of resistance.
-            </p>
-        </section>
+        <!-- Modal: Ό,τι θυμόμαστε μένει -->
+        <div class="modal fade" id="modal-oti-thimomaste-menei" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-xl modal-dialog-centered">
+                <div class="modal-content border-0">
+                    <div class="modal-header border-0 pb-0">
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body p-4 text-center">
+                        
+                        <!-- Project Images Gallery -->
+                        <div class="project-gallery d-flex flex-column align-items-center gap-3">
+                            <img src="Images/oti-thimomaste-menei/cover.jpg" class="img-fluid" alt="Ό,τι θυμόμαστε μένει" loading="lazy">
+                            <img src="Images/oti-thimomaste-menei/048.jpg" class="img-fluid" alt="Ό,τι θυμόμαστε μένει" loading="lazy">
+                            <img src="Images/oti-thimomaste-menei/047.jpg" class="img-fluid" alt="Ό,τι θυμόμαστε μένει" loading="lazy">
+                            <img src="Images/oti-thimomaste-menei/046.jpg" class="img-fluid" alt="Ό,τι θυμόμαστε μένει" loading="lazy">
+                            <img src="Images/oti-thimomaste-menei/045.jpg" class="img-fluid" alt="Ό,τι θυμόμαστε μένει" loading="lazy">
+                            <img src="Images/oti-thimomaste-menei/044.jpg" class="img-fluid" alt="Ό,τι θυμόμαστε μένει" loading="lazy">
+                            <img src="Images/oti-thimomaste-menei/043.jpg" class="img-fluid" alt="Ό,τι θυμόμαστε μένει" loading="lazy">
+                            
+                            <!-- Το 042.jpg παραλείπεται καθώς λείπει από τον φάκελο -->
+                            
+                            <img src="Images/oti-thimomaste-menei/041.jpg" class="img-fluid" alt="Ό,τι θυμόμαστε μένει" loading="lazy">
+                            <img src="Images/oti-thimomaste-menei/040.jpg" class="img-fluid" alt="Ό,τι θυμόμαστε μένει" loading="lazy">
+                            <img src="Images/oti-thimomaste-menei/039.jpg" class="img-fluid" alt="Ό,τι θυμόμαστε μένει" loading="lazy">
+                            <img src="Images/oti-thimomaste-menei/038.jpg" class="img-fluid" alt="Ό,τι θυμόμαστε μένει" loading="lazy">
+                            <img src="Images/oti-thimomaste-menei/037.jpg" class="img-fluid" alt="Ό,τι θυμόμαστε μένει" loading="lazy">
+                            <img src="Images/oti-thimomaste-menei/036.jpg" class="img-fluid" alt="Ό,τι θυμόμαστε μένει" loading="lazy">
+                            <img src="Images/oti-thimomaste-menei/035.jpg" class="img-fluid" alt="Ό,τι θυμόμαστε μένει" loading="lazy">
+                            <img src="Images/oti-thimomaste-menei/034.jpg" class="img-fluid" alt="Ό,τι θυμόμαστε μένει" loading="lazy">
+                            <img src="Images/oti-thimomaste-menei/033.jpg" class="img-fluid" alt="Ό,τι θυμόμαστε μένει" loading="lazy">
+                            <img src="Images/oti-thimomaste-menei/032.jpg" class="img-fluid" alt="Ό,τι θυμόμαστε μένει" loading="lazy">
+                            <img src="Images/oti-thimomaste-menei/031.jpg" class="img-fluid" alt="Ό,τι θυμόμαστε μένει" loading="lazy">
+                            <img src="Images/oti-thimomaste-menei/030.jpg" class="img-fluid" alt="Ό,τι θυμόμαστε μένει" loading="lazy">
+                            <img src="Images/oti-thimomaste-menei/029.jpg" class="img-fluid" alt="Ό,τι θυμόμαστε μένει" loading="lazy">
+                            <img src="Images/oti-thimomaste-menei/028.jpg" class="img-fluid" alt="Ό,τι θυμόμαστε μένει" loading="lazy">
+                            <img src="Images/oti-thimomaste-menei/027.jpg" class="img-fluid" alt="Ό,τι θυμόμαστε μένει" loading="lazy">
+                            <img src="Images/oti-thimomaste-menei/026.jpg" class="img-fluid" alt="Ό,τι θυμόμαστε μένει" loading="lazy">
+                            <img src="Images/oti-thimomaste-menei/025.jpg" class="img-fluid" alt="Ό,τι θυμόμαστε μένει" loading="lazy">
+                            <img src="Images/oti-thimomaste-menei/024.jpg" class="img-fluid" alt="Ό,τι θυμόμαστε μένει" loading="lazy">
+                            <img src="Images/oti-thimomaste-menei/023.jpg" class="img-fluid" alt="Ό,τι θυμόμαστε μένει" loading="lazy">
+                            <img src="Images/oti-thimomaste-menei/022.jpg" class="img-fluid" alt="Ό,τι θυμόμαστε μένει" loading="lazy">
+                            <img src="Images/oti-thimomaste-menei/021.jpg" class="img-fluid" alt="Ό,τι θυμόμαστε μένει" loading="lazy">
+                            <img src="Images/oti-thimomaste-menei/020.jpg" class="img-fluid" alt="Ό,τι θυμόμαστε μένει" loading="lazy">
+                            <img src="Images/oti-thimomaste-menei/019.jpg" class="img-fluid" alt="Ό,τι θυμόμαστε μένει" loading="lazy">
+                            <img src="Images/oti-thimomaste-menei/018.jpg" class="img-fluid" alt="Ό,τι θυμόμαστε μένει" loading="lazy">
+                            <img src="Images/oti-thimomaste-menei/017.jpg" class="img-fluid" alt="Ό,τι θυμόμαστε μένει" loading="lazy">
+                            <img src="Images/oti-thimomaste-menei/016.jpg" class="img-fluid" alt="Ό,τι θυμόμαστε μένει" loading="lazy">
+                            <img src="Images/oti-thimomaste-menei/015.jpg" class="img-fluid" alt="Ό,τι θυμόμαστε μένει" loading="lazy">
+                            <img src="Images/oti-thimomaste-menei/014.jpg" class="img-fluid" alt="Ό,τι θυμόμαστε μένει" loading="lazy">
+                            <img src="Images/oti-thimomaste-menei/013.jpg" class="img-fluid" alt="Ό,τι θυμόμαστε μένει" loading="lazy">
+                            <img src="Images/oti-thimomaste-menei/012.jpg" class="img-fluid" alt="Ό,τι θυμόμαστε μένει" loading="lazy">
+                            <img src="Images/oti-thimomaste-menei/011.jpg" class="img-fluid" alt="Ό,τι θυμόμαστε μένει" loading="lazy">
+                            <img src="Images/oti-thimomaste-menei/010.jpg" class="img-fluid" alt="Ό,τι θυμόμαστε μένει" loading="lazy">
+                            <img src="Images/oti-thimomaste-menei/009.jpg" class="img-fluid" alt="Ό,τι θυμόμαστε μένει" loading="lazy">
+                            <img src="Images/oti-thimomaste-menei/008.jpg" class="img-fluid" alt="Ό,τι θυμόμαστε μένει" loading="lazy">
+                            <img src="Images/oti-thimomaste-menei/007.jpg" class="img-fluid" alt="Ό,τι θυμόμαστε μένει" loading="lazy">
+                            <img src="Images/oti-thimomaste-menei/006.jpg" class="img-fluid" alt="Ό,τι θυμόμαστε μένει" loading="lazy">
+                            <img src="Images/oti-thimomaste-menei/005.jpg" class="img-fluid" alt="Ό,τι θυμόμαστε μένει" loading="lazy">
+                            <img src="Images/oti-thimomaste-menei/004.jpg" class="img-fluid" alt="Ό,τι θυμόμαστε μένει" loading="lazy">
+                            <img src="Images/oti-thimomaste-menei/003.jpg" class="img-fluid" alt="Ό,τι θυμόμαστε μένει" loading="lazy">
+                            <img src="Images/oti-thimomaste-menei/002.jpg" class="img-fluid" alt="Ό,τι θυμόμαστε μένει" loading="lazy">
+                            <img src="Images/oti-thimomaste-menei/001.jpg" class="img-fluid" alt="Ό,τι θυμόμαστε μένει" loading="lazy">
+                        </div>
 
-        <!-- Contact Section -->
-        <section id="contact" class="contact-section text-center border-top">
-            <h2 class="mb-4">contact</h2>
-            <div class="footer-links">
-                <a href="mailto:alexandraPamb@gmail.com">email</a>
-                <a href="https://www.instagram.com/alexandrapambouka/" target="_blank">instagram</a>
-                <a href="https://medium.com/@alexandrapamb" target="_blank">medium</a>
-                <a href="https://vimeo.com/apambouka" target="_blank">vimeo</a>
-                <a href="docs/cv.pdf" download>cv</a>
-                <a href="https://www.digitalnatureprints.com" target="_blank">shop</a>
+                    </div>
+                </div>
             </div>
-        </section>
+        </div>
 
     </main>
 
-    <footer class="text-center py-4 border-top">
-        <p class="small text-muted mb-0">© Alexandra Pambouka</p>
-    </footer>
-
-    <!-- MODALS -->
-
-    <!-- Modal 1: Ό,τι θυμόμαστε μένει -->
-    <div class="modal fade" id="modal-tenderscapes" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-header border-0">
-                    <h4 class="modal-title">Ό,τι θυμόμαστε μένει | solo exhibition</h4>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body text-center">
-                    <p class="modal-project-desc">"The process begins with the creation of a semi-fictional, colorful herbarium. With the seriousness of a child at play, beads, old pieces of fabric and threads are gathered. The design is transferred. The fabric is cut, sewn, and selectively padded. Gestures are repeated as time slows down, liberated from the imperatives of productivity. Neglected materials gain new lives and the tactile experience reactivates, through memory, fragments of a world that has passed and of a future that never came to be". Excerpt from Marina Demosthenous' text on the exhibition.</p>
-
-                    <img src="Images/oti-thimomaste-menei/cover.jpg" class="img-fluid" alt="Ότι θυμόμαστε μένει" loading="lazy">
-                    <img src="Images/oti-thimomaste-menei/047.jpg" class="img-fluid" alt="Ότι θυμόμαστε μένει" loading="lazy">
-                    <img src="Images/oti-thimomaste-menei/046.jpg" class="img-fluid" alt="Ότι θυμόμαστε μένει" loading="lazy">
-                    <img src="Images/oti-thimomaste-menei/045.jpg" class="img-fluid" alt="Ότι θυμόμαστε μένει" loading="lazy">
-                    <img src="Images/oti-thimomaste-menei/044.jpg" class="img-fluid" alt="Ότι θυμόμαστε μένει" loading="lazy">
-                    <img src="Images/oti-thimomaste-menei/043.jpg" class="img-fluid" alt="Ότι θυμόμαστε μένει" loading="lazy">
-                    <img src="Images/oti-thimomaste-menei/042.jpg" class="img-fluid" alt="Ότι θυμόμαστε μένει" loading="lazy">
-                    <img src="Images/oti-thimomaste-menei/041.jpg" class="img-fluid" alt="Ότι θυμόμαστε μένει" loading="lazy">
-                    <img src="Images/oti-thimomaste-menei/040.jpg" class="img-fluid" alt="Ότι θυμόμαστε μένει" loading="lazy">
-                    <img src="Images/oti-thimomaste-menei/039.jpg" class="img-fluid" alt="Ότι θυμόμαστε μένει" loading="lazy">
-                    <img src="Images/oti-thimomaste-menei/038.jpg" class="img-fluid" alt="Ότι θυμόμαστε μένει" loading="lazy">
-                    <img src="Images/oti-thimomaste-menei/001.jpg" class="img-fluid" alt="Ότι θυμόμαστε μένει" loading="lazy">
-                    <img src="Images/oti-thimomaste-menei/002.jpg" class="img-fluid" alt="Ότι θυμόμαστε μένει" loading="lazy">
-                    <img src="Images/oti-thimomaste-menei/003.jpg" class="img-fluid" alt="Ότι θυμόμαστε μένει" loading="lazy">
-                    <img src="Images/oti-thimomaste-menei/004.jpg" class="img-fluid" alt="Ότι θυμόμαστε μένει" loading="lazy">
-                    <img src="Images/oti-thimomaste-menei/005.jpg" class="img-fluid" alt="Ότι θυμόμαστε μένει" loading="lazy">
-                    <img src="Images/oti-thimomaste-menei/006.jpg" class="img-fluid" alt="Ότι θυμόμαστε μένει" loading="lazy">
-                    <img src="Images/oti-thimomaste-menei/007.jpg" class="img-fluid" alt="Ότι θυμόμαστε μένει" loading="lazy">
-                    <img src="Images/oti-thimomaste-menei/008.jpg" class="img-fluid" alt="Ότι θυμόμαστε μένει" loading="lazy">
-                    <img src="Images/oti-thimomaste-menei/009.jpg" class="img-fluid" alt="Ότι θυμόμαστε μένει" loading="lazy">
-                    <img src="Images/oti-thimomaste-menei/010.jpg" class="img-fluid" alt="Ότι θυμόμαστε μένει" loading="lazy">
-                    <img src="Images/oti-thimomaste-menei/011.jpg" class="img-fluid" alt="Ότι θυμόμαστε μένει" loading="lazy">
-                    <img src="Images/oti-thimomaste-menei/012.jpg" class="img-fluid" alt="Ότι θυμόμαστε μένει" loading="lazy">
-                    <img src="Images/oti-thimomaste-menei/013.jpg" class="img-fluid" alt="Ότι θυμόμαστε μένει" loading="lazy">
-                    <img src="Images/oti-thimomaste-menei/014.jpg" class="img-fluid" alt="Ότι θυμόμαστε μένει" loading="lazy">
-                    <img src="Images/oti-thimomaste-menei/015.jpg" class="img-fluid" alt="Ότι θυμόμαστε μένει" loading="lazy">
-                    <img src="Images/oti-thimomaste-menei/016.jpg" class="img-fluid" alt="Ότι θυμόμαστε μένει" loading="lazy">
-                    <img src="Images/oti-thimomaste-menei/017.jpg" class="img-fluid" alt="Ότι θυμόμαστε μένει" loading="lazy">
-                    <img src="Images/oti-thimomaste-menei/018.jpg" class="img-fluid" alt="Ότι θυμόμαστε μένει" loading="lazy">
-                    <img src="Images/oti-thimomaste-menei/019.jpg" class="img-fluid" alt="Ότι θυμόμαστε μένει" loading="lazy">
-                    <img src="Images/oti-thimomaste-menei/020.jpg" class="img-fluid" alt="Ότι θυμόμαστε μένει" loading="lazy">
-                    <img src="Images/oti-thimomaste-menei/021.jpg" class="img-fluid" alt="Ότι θυμόμαστε μένει" loading="lazy">
-                    <img src="Images/oti-thimomaste-menei/025.jpg" class="img-fluid" alt="Ότι θυμόμαστε μένει" loading="lazy">
-                    <img src="Images/oti-thimomaste-menei/026.jpg" class="img-fluid" alt="Ότι θυμόμαστε μένει" loading="lazy">
-                    <img src="Images/oti-thimomaste-menei/027.jpg" class="img-fluid" alt="Ότι θυμόμαστε μένει" loading="lazy">
-                    <img src="Images/oti-thimomaste-menei/028.jpg" class="img-fluid" alt="Ότι θυμόμαστε μένει" loading="lazy">
-                    <img src="Images/oti-thimomaste-menei/029.jpg" class="img-fluid" alt="Ότι θυμόμαστε μένει" loading="lazy">
-                    <img src="Images/oti-thimomaste-menei/032.jpg" class="img-fluid" alt="Ότι θυμόμαστε μένει" loading="lazy">
-                    <img src="Images/oti-thimomaste-menei/033.jpg" class="img-fluid" alt="Ότι θυμόμαστε μένει" loading="lazy">
-                    <img src="Images/oti-thimomaste-menei/034.jpg" class="img-fluid" alt="Ότι θυμόμαστε μένει" loading="lazy">
-                    <img src="Images/oti-thimomaste-menei/035.jpg" class="img-fluid" alt="Ότι θυμόμαστε μένει" loading="lazy">
-                    <img src="Images/oti-thimomaste-menei/036.jpg" class="img-fluid" alt="Ότι θυμόμαστε μένει" loading="lazy">
-                    <img src="Images/oti-thimomaste-menei/037.jpg" class="img-fluid" alt="Ότι θυμόμαστε μένει" loading="lazy">
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Modal 2: Nature Folk Kitsch -->
-    <div class="modal fade" id="modal-nfk" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-header border-0">
-                    <h4 class="modal-title">nature folk kitsch</h4>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body text-center">
-                    <p class="modal-project-desc">Trying to identify the connection between nature, folk culture and kitsch culture. Digital assemblages of digital and physical artworks.</p>
-                    <img src="Images/nfk1.jpg" class="img-fluid" alt="Nature Folk Kitsch 1">
-                    <img src="Images/nfk2.jpg" class="img-fluid" alt="Nature Folk Kitsch 2">
-                    <img src="Images/nfk3.jpg" class="img-fluid" alt="Nature Folk Kitsch 3">
-                    <img src="Images/nfk4.jpg" class="img-fluid" alt="Nature Folk Kitsch 4">
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Modal 3: Continuous Thread -->
-    <div class="modal fade" id="modal-continuous-thread" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-header border-0">
-                    <h4 class="modal-title">continuous thread</h4>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body text-center">
-                    <p class="modal-project-desc">
-                        <a href="https://alexandrapamb.wixsite.com/continuousthread" target="_blank">Continuous Thread Archive &rarr;</a>
-                    </p>
-                    <img src="Images/KO.jpg" class="img-fluid" alt="Modus Operandi 17">
-                    <p class="caption-text">Modus Operandi 17, Displacement As a State of Mind, Koraï, CY</p>
-                    <img src="Images/G.jpg" class="img-fluid" alt="Guests living room">
-                    <p class="caption-text">Guests' living room, THOC Apothikes Theatre, CY (Photo: Kyriakos Christodoulides)</p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Modal 4: Basketry -->
-    <div class="modal fade" id="modal-basketry" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-header border-0">
-                    <h4 class="modal-title">basketry</h4>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body text-center">
-                    <p class="modal-project-desc">Research focus on basket weaving and reed-mat weaving as intangible cultural heritage in Cyprus.</p>
-                    <img src="Images/basket/R1.jpg" class="img-fluid" alt="Basketry 1">
-                    <p class="caption-text">Portuguese Basket Technology, Residency 2019 (Alexandra Pambouka | Gonçalo Gama)</p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Modal 5: Workshops -->
-    <div class="modal fade" id="modal-workshops" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-header border-0">
-                    <h4 class="modal-title">workshops & residencies</h4>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body text-center">
-                    <img src="Images/W1.jpg" class="img-fluid" alt="Symplexi Workshop">
-                    <p class="caption-text">"Symplexi" Workshop, Phytorio, 2018</p>
-                    <img src="Images/cabane.png" class="img-fluid" alt="Cabane Athens">
-                    <p class="caption-text">Intertwining lines, Cabane Athens, 2023</p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- JS Scripts -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
-
 </html>
