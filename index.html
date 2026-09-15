@@ -127,12 +127,13 @@
             margin-bottom: 30px;
         }
 
-        .project-card img {
-            width: 100%;
-            height: auto;
-            display: block;
-            transition: transform 0.4s ease;
-        }
+     .project-card img {
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
+}
 
         .project-overlay {
             position: absolute;
@@ -240,27 +241,32 @@
         }
 
         /* Responsive Breakpoints Improvements */
-        @media (max-width: 767.98px) {
-            header.site-header {
-                padding: 15px 20px;
-            }
+      @media (max-width: 767.98px) {
+    header.site-header {
+        padding: 15px 20px;
+    }
 
-            main {
-                padding: 20px 15px;
-            }
+    main {
+        padding: 20px 15px;
+    }
 
-            .modal-content {
-                padding: 15px;
-            }
+    /* Προσθέτεις αυτή τη γραμμή */
+    .project-card img {
+        height: 260px;
+    }
 
-            .about-section, .contact-section {
-                padding: 40px 0 20px 0;
-            }
+    .modal-content {
+        padding: 15px;
+    }
 
-            .footer-links {
-                gap: 15px;
-            }
-        }
+    .about-section, .contact-section {
+        padding: 40px 0 20px 0;
+    }
+
+    .footer-links {
+        gap: 15px;
+    }
+}
     </style>
 </head>
 
@@ -346,7 +352,7 @@
                <!-- Item 6: Workshops -->
 <div class="col-12 col-md-6 col-lg-4">
     <div class="project-card" data-toggle="modal" data-target="#modal-workshops">
-        <img src="Images/Basketry workshops/cabane2.jpg" alt="Basketry workshops" class="img-fluid" loading="lazy">
+        <img src="Images/Basketry workshops/cabane1.png" alt="Basketry workshops" class="img-fluid" loading="lazy">
         <div class="project-overlay">
             <h3 class="project-title">basketry workshops</h3>
         </div>
